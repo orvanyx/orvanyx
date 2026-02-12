@@ -1,174 +1,74 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Orvanyx - Bio</title>
-     <link rel="stylesheet" href="bio-styles.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
- </head>
- <body>
--    <!-- 
--    ============================================
--    BACKGROUND CUSTOMIZATION
--    ============================================
--    Change the background gradient below by editing the colors in the style attribute
--    Example gradients:
--    - Purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%)
--    - Ocean: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)
--    - Sunset: linear-gradient(135deg, #fa709a 0%, #fee140 100%)
--    - Dark: linear-gradient(135deg, #0f0f0f 0%, #434343 100%)
--    -->
--    <div class="user-bio-page" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-+    <div class="user-bio-page">
-         <div class="bio-container">
--            
--            <!-- 
--            ============================================
--            PROFILE SECTION
--            ============================================
--            -->
-             <div class="bio-profile">
--                <!-- 
--                PROFILE PICTURE
--                To add an image: uncomment the <img> tag and replace "your-avatar.jpg" with your image filename
--                To use a letter: keep only the "O" text
--                To change color: edit the background in the style attribute
--                -->
--                <div class="bio-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
--                    <!-- <img src="your-avatar.jpg" alt="Profile Picture"> -->
--                    O
--                </div>
--                
--                <!-- 
--                PROFILE NAME
--                Edit the text between the <h1> tags
--                -->
-+                <div class="bio-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">O</div>
-                 <h1 class="bio-name">Orvanyx</h1>
--                
--                <!-- 
--                PROFILE DESCRIPTION/BIO
--                Edit the text between the <p> tags
--                -->
-                 <p class="bio-description">Health enthusiast • Content creator • Sharing my journey to wellness</p>
-             </div>
- 
--            <!-- 
--            ============================================
--            LINKS SECTION
--            ============================================
--            Each link has three parts:
--            1. href="" - The URL where the link goes
--            2. link-icon - The emoji/icon on the left
--            3. link-text - The text displayed
--            -->
-             <div class="bio-links">
--                
--                <!-- LINK 1 -->
--                <a href="https://instagram.com/orvanyx" class="bio-link" style="animation-delay: 0.2s">
--                    <span class="link-icon">📸</span>
--                    <span class="link-text">Instagram</span>
--                    <span class="link-arrow">→</span>
--                </a>
--
--                <!-- LINK 2 -->
--                <a href="https://youtube.com/@orvanyx" class="bio-link" style="animation-delay: 0.3s">
--                    <span class="link-icon">🎥</span>
--                    <span class="link-text">YouTube</span>
--                    <span class="link-arrow">→</span>
--                </a>
--
--                <!-- LINK 3 -->
--                <a href="https://twitter.com/orvanyx" class="bio-link" style="animation-delay: 0.4s">
--                    <span class="link-icon">🐦</span>
--                    <span class="link-text">Twitter</span>
--                    <span class="link-arrow">→</span>
--                </a>
--
--                <!-- LINK 4 -->
--                <a href="https://orvanyx.com" class="bio-link" style="animation-delay: 0.5s">
--                    <span class="link-icon">🌐</span>
--                    <span class="link-text">Website</span>
--                    <span class="link-arrow">→</span>
--                </a>
--
--                <!-- LINK 5 -->
--                <a href="mailto:hello@orvanyx.com" class="bio-link" style="animation-delay: 0.6s">
--                    <span class="link-icon">✉️</span>
--                    <span class="link-text">Email Me</span>
--                    <span class="link-arrow">→</span>
--                </a>
--
--                <!-- 
--                ============================================
--                TO ADD MORE LINKS:
--                ============================================
--                Copy the entire <a> block above and paste it here.
--                Then edit:
--                1. href="YOUR-URL-HERE"
--                2. style="animation-delay: 0.7s" (increase by 0.1s for each new link)
--                3. link-icon emoji
--                4. link-text content
--                
--                Example:
--                <a href="https://tiktok.com/@yourusername" class="bio-link" style="animation-delay: 0.7s">
--                    <span class="link-icon">🎵</span>
--                    <span class="link-text">TikTok</span>
--                    <span class="link-arrow">→</span>
--                </a>
--                -->
--
-+                <a href="https://instagram.com/orvanyx" class="bio-link" style="animation-delay: 0.2s"><span class="link-icon">📸</span><span class="link-text">Instagram</span><span class="link-arrow">→</span></a>
-+                <a href="https://youtube.com/@orvanyx" class="bio-link" style="animation-delay: 0.3s"><span class="link-icon">🎥</span><span class="link-text">YouTube</span><span class="link-arrow">→</span></a>
-+                <a href="https://twitter.com/orvanyx" class="bio-link" style="animation-delay: 0.4s"><span class="link-icon">🐦</span><span class="link-text">Twitter</span><span class="link-arrow">→</span></a>
-+                <a href="https://orvanyx.com" class="bio-link" style="animation-delay: 0.5s"><span class="link-icon">🌐</span><span class="link-text">Website</span><span class="link-arrow">→</span></a>
-+                <a href="mailto:hello@orvanyx.com" class="bio-link" style="animation-delay: 0.6s"><span class="link-icon">✉️</span><span class="link-text">Email Me</span><span class="link-arrow">→</span></a>
-             </div>
- 
--            <!-- 
--            ============================================
--            MUSIC PLAYER (OPTIONAL)
--            ============================================
--            To add background music:
--            1. Uncomment the section below
--            2. Replace "your-music.mp3" with your audio file
--            
--            To remove music player:
--            - Keep this section commented out or delete it
--            -->
--            <!--
--            <div class="bio-music">
--                <p class="music-title">🎵 Now Playing</p>
--                <audio class="music-player" controls loop>
--                    <source src="your-music.mp3" type="audio/mpeg">
--                    Your browser does not support the audio element.
--                </audio>
-+            <div class="bio-music" data-profile="orvanyx">
-+                <p class="music-title">🎮 Gaming Audio Deck</p>
-+                <audio class="music-player" preload="metadata" loop></audio>
-+                <label class="music-control-label" for="song-select-orvanyx">Track</label>
-+                <select id="song-select-orvanyx" class="music-select">
-+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Neon Arena</option>
-+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Boss Rush</option>
-+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3">Night Raid</option>
-+                </select>
-+                <div class="music-controls">
-+                    <button type="button" class="music-btn" data-action="play">Play</button>
-+                    <button type="button" class="music-btn" data-action="mute">Mute</button>
-+                </div>
-+                <label class="music-control-label" for="volume-orvanyx">Volume</label>
-+                <input id="volume-orvanyx" class="music-volume" type="range" min="0" max="1" step="0.01" value="0.5">
-+                <p class="music-status" aria-live="polite">Ready to play</p>
-             </div>
--            -->
--
-         </div>
-     </div>
-+    <script src="bio-music.js"></script>
- </body>
--</html>
-\ No newline at end of file
-+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orvanyx - Player Profile</title>
+    <link rel="stylesheet" href="bio-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="user-bio-page">
+        <div class="bio-container">
+            <div class="bio-profile">
+                <div class="bio-avatar" style="background: linear-gradient(135deg, #00d4ff 0%, #06ffa5 100%);">O</div>
+                <h1 class="bio-name">Orvanyx</h1>
+                <p class="bio-description">Gamification Specialist • Content Creator • Level Up Your Game</p>
+            </div>
+
+            <div class="bio-links">
+                <a href="https://instagram.com/orvanyx" class="bio-link" style="animation-delay: 0.2s">
+                    <span class="link-icon">📸</span>
+                    <span class="link-text">Instagram</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://youtube.com/@orvanyx" class="bio-link" style="animation-delay: 0.3s">
+                    <span class="link-icon">🎥</span>
+                    <span class="link-text">YouTube</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://twitter.com/orvanyx" class="bio-link" style="animation-delay: 0.4s">
+                    <span class="link-icon">🐦</span>
+                    <span class="link-text">Twitter</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="https://orvanyx.com" class="bio-link" style="animation-delay: 0.5s">
+                    <span class="link-icon">🌐</span>
+                    <span class="link-text">Website</span>
+                    <span class="link-arrow">→</span>
+                </a>
+                <a href="mailto:hello@orvanyx.com" class="bio-link" style="animation-delay: 0.6s">
+                    <span class="link-icon">✉️</span>
+                    <span class="link-text">Contact</span>
+                    <span class="link-arrow">→</span>
+                </a>
+            </div>
+
+            <div class="bio-music" data-profile="orvanyx">
+                <p class="music-title">🎮 Audio Deck</p>
+                <audio class="music-player" preload="metadata" loop></audio>
+                
+                <label class="music-control-label" for="song-select-orvanyx">Track Selection</label>
+                <select id="song-select-orvanyx" class="music-select">
+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Neon Arena</option>
+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Boss Rush</option>
+                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3">Night Raid</option>
+                </select>
+                
+                <div class="music-controls">
+                    <button type="button" class="music-btn" data-action="play">Play</button>
+                    <button type="button" class="music-btn" data-action="mute">Mute</button>
+                </div>
+                
+                <label class="music-control-label" for="volume-orvanyx">Volume Control</label>
+                <input id="volume-orvanyx" class="music-volume" type="range" min="0" max="1" step="0.01" value="0.5">
+                
+                <p class="music-status" aria-live="polite">Ready to play</p>
+            </div>
+        </div>
+    </div>
+    <script src="bio-music.js"></script>
+</body>
+</html>
