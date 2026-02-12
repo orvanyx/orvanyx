@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Pages</title>
+    <link rel="stylesheet" href="bio-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bio-directory">
+        <div class="directory-container">
+            <h1 class="directory-title">Bio Pages</h1>
+            <p class="directory-subtitle">Select a profile to view</p>
+            
+            <div class="user-cards">
+                
+                <!-- 
+                ============================================
+                USER CARD 1 - ORVANYX-BIO
+                ============================================
+                TO EDIT:
+                - href: Change "bio-orvanyx.html" to your user's page filename
+                - background-image: Change the gradient colors
+                - .user-avatar: Change background color or add image
+                - .user-name: Change the display name
+                - .user-handle: Change the @username
+                -->
+                <a href="bio-orvanyx.html" class="user-card" style="animation-delay: 0.1s">
+                    <div class="card-background" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="card-content">
+                        <div class="user-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <!-- Add image here: <img src="avatar.jpg" alt="Avatar"> -->
+                            O
+                        </div>
+                        <h2 class="user-name">Orvanyx</h2>
+                        <p class="user-handle">@orvanyx-bio</p>
+                    </div>
+                </a>
+
+                <!-- 
+                ============================================
+                USER CARD 2 - ZERO
+                ============================================
+                -->
+                <a href="bio-zero.html" class="user-card" style="animation-delay: 0.2s">
+                    <div class="card-background" style="background: linear-gradient(135deg, #0f0f0f 0%, #434343 100%);"></div>
+                    <div class="card-content">
+                        <div class="user-avatar" style="background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);">
+                            <!-- Add image here: <img src="avatar.jpg" alt="Avatar"> -->
+                            Z
+                        </div>
+                        <h2 class="user-name">Zero</h2>
+                        <p class="user-handle">@zero</p>
+                    </div>
+                </a>
+
+                <!-- 
+                ============================================
+                TO ADD A NEW USER CARD:
+                ============================================
+                Copy the entire <a> block above and paste it here.
+                Then edit:
+                1. href="bio-NEWNAME.html" (your new user page)
+                2. style="animation-delay: 0.3s" (increase by 0.1s for each new card)
+                3. card-background gradient colors
+                4. user-avatar background color and letter/image
+                5. user-name and user-handle text
+                
+                Don't forget to create the corresponding bio-NEWNAME.html page!
+                -->
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

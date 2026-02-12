@@ -1,67 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Orvanyx — Orvans World and Vision</title>
-    <meta name="description" content="Orvanyx official website — orvans world and vision." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="home-page">
-    <div class="noise" aria-hidden="true"></div>
-    <div class="orb orb-a"></div>
-    <div class="orb orb-b"></div>
-
-    <header class="container nav glass">
-      <a class="logo" href="index.html">ORVANYX</a>
-      <nav>
-        <a href="#vision">Vision</a>
-        <a href="#pillars">Pillars</a>
-        <a href="private-links.html">Private Links</a>
-      </nav>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orvanyx - Orvan's World & Vision</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Work+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="grain-overlay"></div>
+    
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="site-title">Orvanyx</h1>
+                <p class="site-subtitle">Orvan's World & Vision</p>
+            </div>
+        </div>
     </header>
 
-    <main class="container">
-      <section class="hero glass" id="vision">
-        <p class="tag">INTRODUCTION</p>
-        <h1>orvans world and vision</h1>
-        <p>
-          Welcome to the official space of <strong>orvanyx</strong> — where creativity, technology,
-          and future thinking meet. This is your premium digital identity, ready to scale with
-          your next big moves.
-        </p>
-        <div class="actions">
-          <a class="btn btn-main" href="private-links.html">Enter Private Links</a>
-          <a class="btn btn-soft" href="#pillars">Explore Vision</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Exploring Health & Wellness</h2>
+                <p class="hero-description">A collection of insights, research, and personal reflections on living a healthier, more balanced life.</p>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section class="pillars" id="pillars">
-        <article class="glass card">
-          <h2>Creative DNA</h2>
-          <p>Bold visual language with a signature futuristic style and clean user experience.</p>
-        </article>
-        <article class="glass card">
-          <h2>Digital Power</h2>
-          <p>A fast static architecture that deploys instantly on Netlify with global delivery.</p>
-        </article>
-        <article class="glass card">
-          <h2>Always Evolving</h2>
-          <p>Designed as a living brand hub where your content, projects, and presence can grow.</p>
-        </article>
-      </section>
-    </main>
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-card" style="animation-delay: 0.1s">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">February 10, 2026</span>
+                        <h3 class="blog-title">The Science of Sleep: Why 8 Hours Isn't Enough</h3>
+                        <p class="blog-excerpt">Quality matters more than quantity when it comes to restorative sleep. Discover the latest research on sleep cycles and how to optimize your rest.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
 
-    <footer class="container footer">
-      <p>© <span id="year"></span> orvanyx • Built for Netlify + orvanyx.com</p>
+                <!-- Blog Post 2 -->
+                <article class="blog-card" style="animation-delay: 0.2s">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">February 5, 2026</span>
+                        <h3 class="blog-title">Mindful Eating: Reconnecting with Your Food</h3>
+                        <p class="blog-excerpt">In our fast-paced world, we've lost touch with the simple act of eating. Learn how mindfulness can transform your relationship with nutrition.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card" style="animation-delay: 0.3s">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 28, 2026</span>
+                        <h3 class="blog-title">Movement as Medicine: Beyond the Gym</h3>
+                        <p class="blog-excerpt">Exercise doesn't have to mean heavy lifting or marathon running. Explore natural movement patterns that our bodies were designed for.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card" style="animation-delay: 0.4s">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 20, 2026</span>
+                        <h3 class="blog-title">The Gut-Brain Connection: Your Second Brain</h3>
+                        <p class="blog-excerpt">Recent studies reveal how our digestive system directly influences mood, cognition, and mental health. Here's what you need to know.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card" style="animation-delay: 0.5s">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 15, 2026</span>
+                        <h3 class="blog-title">Digital Detox: Finding Balance in a Connected World</h3>
+                        <p class="blog-excerpt">Our constant connectivity comes at a cost. Practical strategies for reducing screen time and reclaiming your mental space.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card" style="animation-delay: 0.6s">
+                    <div class="blog-image" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);"></div>
+                    <div class="blog-content">
+                        <span class="blog-date">January 8, 2026</span>
+                        <h3 class="blog-title">Breathwork Fundamentals: The Power of Conscious Breathing</h3>
+                        <p class="blog-excerpt">One of the most overlooked tools for health is free and always available. Learn simple breathing techniques to reduce stress and boost energy.</p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2026 Orvanyx. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="app.js"></script>
-  </body>
+</body>
 </html>
