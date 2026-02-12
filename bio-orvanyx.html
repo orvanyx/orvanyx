@@ -10,6 +10,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating Music Deck Button -->
+    <button class="music-deck-toggle" id="musicDeckToggle" aria-label="Toggle Music Deck">
+        🎵
+    </button>
+
+    <!-- Floating Music Deck Panel -->
+    <div class="music-deck-panel" id="musicDeckPanel">
+        <div class="music-deck-header">
+            <h3 class="music-deck-title">🎮 Audio Deck</h3>
+            <button class="music-deck-close" id="musicDeckClose" aria-label="Close">×</button>
+        </div>
+        
+        <div class="bio-music" data-profile="orvanyx">
+            <audio class="music-player" preload="metadata" loop></audio>
+            
+            <label class="music-control-label" for="song-select-orvanyx">Track Selection</label>
+            <select id="song-select-orvanyx" class="music-select">
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Neon Arena</option>
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Boss Rush</option>
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3">Night Raid</option>
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">Cyber Chase</option>
+                <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3">Digital Dreams</option>
+            </select>
+            
+            <div class="music-controls">
+                <button type="button" class="music-btn" data-action="play">Pause</button>
+                <button type="button" class="music-btn" data-action="mute">Mute</button>
+                <button type="button" class="music-btn" data-action="prev">⏮ Prev</button>
+                <button type="button" class="music-btn" data-action="next">Next ⏭</button>
+            </div>
+            
+            <label class="music-control-label" for="volume-orvanyx">Volume Control</label>
+            <input id="volume-orvanyx" class="music-volume" type="range" min="0" max="1" step="0.01" value="0.5">
+            
+            <div class="music-progress-container">
+                <input type="range" class="music-progress" min="0" max="100" value="0" step="0.1">
+            </div>
+            
+            <p class="music-status" aria-live="polite">Playing: Neon Arena</p>
+            
+            <div class="music-visualizer">
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+                <div class="visualizer-bar"></div>
+            </div>
+        </div>
+    </div>
+
     <div class="user-bio-page">
         <div class="bio-container">
             <div class="bio-profile">
@@ -44,28 +94,6 @@
                     <span class="link-text">Contact</span>
                     <span class="link-arrow">→</span>
                 </a>
-            </div>
-
-            <div class="bio-music" data-profile="orvanyx">
-                <p class="music-title">🎮 Audio Deck</p>
-                <audio class="music-player" preload="metadata" loop></audio>
-                
-                <label class="music-control-label" for="song-select-orvanyx">Track Selection</label>
-                <select id="song-select-orvanyx" class="music-select">
-                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Neon Arena</option>
-                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Boss Rush</option>
-                    <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3">Night Raid</option>
-                </select>
-                
-                <div class="music-controls">
-                    <button type="button" class="music-btn" data-action="play">Play</button>
-                    <button type="button" class="music-btn" data-action="mute">Mute</button>
-                </div>
-                
-                <label class="music-control-label" for="volume-orvanyx">Volume Control</label>
-                <input id="volume-orvanyx" class="music-volume" type="range" min="0" max="1" step="0.01" value="0.5">
-                
-                <p class="music-status" aria-live="polite">Ready to play</p>
             </div>
         </div>
     </div>

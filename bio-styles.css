@@ -648,3 +648,351 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--color-accent-2);
 }
+
+/* ========================================
+   CUSTOM CURSOR - LUFFY'S STRAW HAT
+   ======================================== */
+body,
+.bio-directory,
+.user-bio-page,
+a,
+button,
+input,
+select {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14" fill="%23F4D03F" stroke="%23C0392B" stroke-width="2"/><ellipse cx="16" cy="16" rx="13" ry="6" fill="%23E67E22"/><path d="M 3 16 Q 16 10, 29 16" stroke="%23C0392B" stroke-width="2" fill="none"/><circle cx="16" cy="16" r="3" fill="%23C0392B"/></svg>'), auto;
+}
+
+a:hover,
+button:hover,
+.bio-link:hover,
+.music-btn:hover {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><circle cx="18" cy="18" r="16" fill="%23F4D03F" stroke="%23C0392B" stroke-width="2.5"/><ellipse cx="18" cy="18" rx="15" ry="7" fill="%23E67E22"/><path d="M 2 18 Q 18 11, 34 18" stroke="%23C0392B" stroke-width="2.5" fill="none"/><circle cx="18" cy="18" r="3.5" fill="%23C0392B"/></svg>'), pointer;
+}
+
+/* ========================================
+   FLOATING MUSIC DECK BUTTON
+   ======================================== */
+.music-deck-toggle {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), #0051ff);
+    border: 3px solid rgba(0, 212, 255, 0.5);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+    z-index: 9998;
+    transition: all 0.3s ease;
+    animation: musicButtonPulse 2s ease-in-out infinite, musicButtonFloat 3s ease-in-out infinite;
+}
+
+.music-deck-toggle:hover {
+    transform: scale(1.15) rotate(15deg);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.6);
+}
+
+.music-deck-toggle:active {
+    transform: scale(0.95);
+}
+
+@keyframes musicButtonPulse {
+    0%, 100% {
+        box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 8px 30px rgba(0, 212, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.3);
+    }
+}
+
+@keyframes musicButtonFloat {
+    0%, 100% {
+        bottom: 2rem;
+    }
+    50% {
+        bottom: 2.5rem;
+    }
+}
+
+/* ========================================
+   FLOATING MUSIC DECK PANEL
+   ======================================== */
+.music-deck-panel {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    width: 380px;
+    max-width: calc(100vw - 4rem);
+    background: rgba(19, 25, 32, 0.98);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 2px solid var(--color-border);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(0, 212, 255, 0.2);
+    z-index: 9999;
+    transform: translateY(150%) scale(0.8);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+}
+
+.music-deck-panel.active {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    pointer-events: all;
+}
+
+.music-deck-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 2px solid var(--color-border);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(255, 0, 110, 0.05));
+}
+
+.music-deck-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    color: var(--color-accent);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.music-deck-close {
+    background: rgba(255, 0, 110, 0.2);
+    border: 1px solid var(--color-accent-2);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.music-deck-close:hover {
+    background: var(--color-accent-2);
+    transform: rotate(90deg);
+}
+
+.music-deck-panel .bio-music {
+    margin: 0;
+    padding: 1.5rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.music-deck-panel .bio-music::before {
+    display: none;
+}
+
+.music-deck-panel .music-controls {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+.music-deck-panel .music-btn {
+    padding: 0.7rem;
+    font-size: 0.85rem;
+}
+
+/* ========================================
+   MUSIC PROGRESS BAR
+   ======================================== */
+.music-progress-container {
+    margin: 1rem 0;
+    position: relative;
+}
+
+.music-progress {
+    width: 100%;
+    height: 6px;
+    background: rgba(10, 14, 23, 0.95);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.music-progress::-webkit-slider-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(10, 14, 23, 0.95);
+    border-radius: 3px;
+}
+
+.music-progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.music-progress::-webkit-slider-thumb:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 1);
+}
+
+.music-progress::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(10, 14, 23, 0.95);
+    border-radius: 3px;
+}
+
+.music-progress::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.music-progress::-moz-range-thumb:hover {
+    transform: scale(1.3);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 1);
+}
+
+/* Progress fill effect */
+.music-progress {
+    background: linear-gradient(to right, var(--color-accent) 0%, var(--color-accent) 0%, rgba(10, 14, 23, 0.95) 0%);
+}
+
+/* ========================================
+   MUSIC VISUALIZER
+   ======================================== */
+.music-visualizer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 60px;
+    gap: 6px;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    background: rgba(0, 212, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 212, 255, 0.15);
+}
+
+.visualizer-bar {
+    flex: 1;
+    background: linear-gradient(to top, var(--color-accent), var(--color-accent-2));
+    border-radius: 4px 4px 0 0;
+    min-height: 8px;
+    animation: visualizerPulse 0.8s ease-in-out infinite;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+.visualizer-bar:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.visualizer-bar:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.visualizer-bar:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.visualizer-bar:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.visualizer-bar:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes visualizerPulse {
+    0%, 100% {
+        height: 20%;
+    }
+    50% {
+        height: 100%;
+    }
+}
+
+/* Pause visualizer when music is paused */
+.music-paused .visualizer-bar {
+    animation: none;
+    height: 20%;
+    opacity: 0.3;
+}
+
+/* ========================================
+   ENHANCED MOBILE RESPONSIVENESS
+   ======================================== */
+@media (max-width: 768px) {
+    .music-deck-toggle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .music-deck-panel {
+        width: calc(100vw - 3rem);
+        right: 1.5rem;
+        bottom: 5rem;
+    }
+    
+    .music-deck-header {
+        padding: 1rem 1.25rem;
+    }
+    
+    .music-deck-panel .bio-music {
+        padding: 1.25rem;
+    }
+    
+    .music-visualizer {
+        height: 50px;
+    }
+}
+
+/* ========================================
+   SMOOTH TRANSITIONS FOR ALL INTERACTIONS
+   ======================================== */
+.bio-link,
+.music-btn,
+.music-select,
+.music-volume,
+.music-progress,
+.user-card,
+.visualizer-bar {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Prevent text selection on buttons */
+button {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
