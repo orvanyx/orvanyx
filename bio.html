@@ -10,6 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Password Protection Modal -->
+    <div class="password-modal" id="passwordModal">
+        <div class="password-container">
+            <h2 class="password-title">🏴‍☠️ ACCESS REQUIRED</h2>
+            <p class="password-subtitle">Enter the Pirate King's password</p>
+            <input type="password" id="passwordInput" class="password-input" placeholder="Password" autocomplete="off">
+            <button id="passwordSubmit" class="password-submit">ENTER</button>
+            <p class="password-error" id="passwordError"></p>
+        </div>
+    </div>
+
     <!-- Floating Music Deck Button -->
     <button class="music-deck-toggle" id="musicDeckToggle" aria-label="Toggle Music Deck">
         🎵
@@ -110,5 +121,35 @@
         </div>
     </div>
     <script src="bio-music.js"></script>
+    <script>
+        // Password protection
+        const passwordModal = document.getElementById('passwordModal');
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordSubmit = document.getElementById('passwordSubmit');
+        const passwordError = document.getElementById('passwordError');
+        const correctPassword = 'Luffy';
+        
+        // Check if already authenticated
+        if (sessionStorage.getItem('bioAuth') !== 'true') {
+            passwordModal.style.display = 'flex';
+        }
+        
+        passwordSubmit.addEventListener('click', checkPassword);
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkPassword();
+        });
+        
+        function checkPassword() {
+            if (passwordInput.value === correctPassword) {
+                sessionStorage.setItem('bioAuth', 'true');
+                passwordModal.style.display = 'none';
+            } else {
+                passwordError.textContent = 'Incorrect password! Try again, nakama...';
+                passwordInput.value = '';
+                passwordInput.classList.add('shake');
+                setTimeout(() => passwordInput.classList.remove('shake'), 500);
+            }
+        }
+    </script>
 </body>
 </html>

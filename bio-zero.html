@@ -10,6 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme">
+        <span class="theme-icon">🎨</span>
+    </button>
+
     <!-- Floating Music Deck Button -->
     <button class="music-deck-toggle" id="musicDeckToggle" aria-label="Toggle Music Deck">
         🎵
@@ -27,6 +32,7 @@
             
             <label class="music-control-label" for="song-select-zero">Track Selection</label>
             <select id="song-select-zero" class="music-select">
+                <option value="https://cdn.pixabay.com/audio/2022/08/02/audio_90b3c2ce7d.mp3">We Are! (One Piece)</option>
                 <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">Neon Arena</option>
                 <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3">Boss Rush</option>
                 <option value="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3">Night Raid</option>
@@ -48,7 +54,7 @@
                 <input type="range" class="music-progress" min="0" max="100" value="0" step="0.1">
             </div>
             
-            <p class="music-status" aria-live="polite">Playing: Neon Arena</p>
+            <p class="music-status" aria-live="polite">Playing: We Are!</p>
             
             <div class="music-visualizer">
                 <div class="visualizer-bar"></div>
@@ -63,7 +69,9 @@
     <div class="user-bio-page">
         <div class="bio-container">
             <div class="bio-profile">
-                <div class="bio-avatar" style="background: linear-gradient(135deg, #ff006e 0%, #f72585 100%);">Z</div>
+                <div class="bio-avatar">
+                    <img src="https://cdn.imgchest.com/files/f6112dd256df.jpg" alt="Zero Profile Picture">
+                </div>
                 <h1 class="bio-name">Zero</h1>
                 <p class="bio-description">Developer • Designer • Creating Digital Experiences</p>
             </div>
@@ -98,5 +106,20 @@
         </div>
     </div>
     <script src="bio-music.js"></script>
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('onepiece-theme');
+            
+            if (body.classList.contains('onepiece-theme')) {
+                themeToggle.querySelector('.theme-icon').textContent = '🏴‍☠️';
+            } else {
+                themeToggle.querySelector('.theme-icon').textContent = '🎨';
+            }
+        });
+    </script>
 </body>
 </html>

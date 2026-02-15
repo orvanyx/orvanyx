@@ -996,3 +996,271 @@ button {
     -webkit-user-select: none;
     -moz-user-select: none;
 }
+
+/* ========================================
+   PASSWORD MODAL
+   ======================================== */
+.password-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 14, 23, 0.98);
+    backdrop-filter: blur(10px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.password-container {
+    background: rgba(19, 25, 32, 0.95);
+    border: 2px solid var(--color-accent);
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 212, 255, 0.3);
+    animation: modalFadeIn 0.5s ease-out;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.password-title {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--color-accent);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.password-subtitle {
+    color: rgba(224, 230, 237, 0.8);
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+}
+
+.password-input {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(10, 14, 23, 0.95);
+    border: 2px solid var(--color-border);
+    border-radius: 8px;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-family: var(--font-body);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.password-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.password-input.shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.password-submit {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, var(--color-accent), #0051ff);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.password-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+.password-error {
+    color: var(--color-accent-2);
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    min-height: 1.2rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   THEME TOGGLE BUTTON
+   ======================================== */
+.theme-toggle {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent-2), #8338ec);
+    border: 3px solid rgba(255, 0, 110, 0.5);
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 30px rgba(255, 0, 110, 0.4);
+    z-index: 9997;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.15) rotate(-15deg);
+    box-shadow: 0 12px 40px rgba(255, 0, 110, 0.6);
+}
+
+/* ========================================
+   ONE PIECE THEME
+   ======================================== */
+body.onepiece-theme {
+    --color-bg: #1a0e0e;
+    --color-bg-secondary: #2d1616;
+    --color-text: #ffecd9;
+    --color-accent: #ff9e00;
+    --color-accent-2: #d62828;
+    --color-border: rgba(255, 158, 0, 0.3);
+}
+
+body.onepiece-theme .bio-directory::before,
+body.onepiece-theme .user-bio-page::before {
+    background-image:
+        linear-gradient(rgba(255, 158, 0, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 158, 0, 0.08) 1px, transparent 1px);
+}
+
+body.onepiece-theme .bio-directory {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 158, 0, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(214, 40, 40, 0.1), transparent 50%),
+        linear-gradient(135deg, #1a0e0e 0%, #2d1616 100%);
+}
+
+body.onepiece-theme .user-bio-page {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(255, 158, 0, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(214, 40, 40, 0.1), transparent 50%),
+        linear-gradient(135deg, #1a0e0e 0%, #2d1616 100%);
+}
+
+body.onepiece-theme .directory-title,
+body.onepiece-theme .bio-name {
+    color: #ff9e00;
+    text-shadow: 0 0 24px rgba(255, 158, 0, 0.5);
+}
+
+body.onepiece-theme .music-deck-toggle {
+    background: linear-gradient(135deg, #ff9e00, #d62828);
+    border-color: rgba(255, 158, 0, 0.6);
+    box-shadow: 0 8px 30px rgba(255, 158, 0, 0.4);
+}
+
+body.onepiece-theme .music-deck-panel {
+    border-color: rgba(255, 158, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(255, 158, 0, 0.2);
+}
+
+body.onepiece-theme .bio-link {
+    border-color: rgba(255, 158, 0, 0.3);
+}
+
+body.onepiece-theme .bio-link:hover {
+    border-color: #ff9e00;
+    box-shadow: 0 8px 25px rgba(255, 158, 0, 0.3);
+}
+
+body.onepiece-theme .music-btn {
+    background: linear-gradient(135deg, #ff9e00, #d62828);
+}
+
+body.onepiece-theme .music-volume::-webkit-slider-thumb,
+body.onepiece-theme .music-progress::-webkit-slider-thumb {
+    background: #ff9e00;
+    box-shadow: 0 0 10px rgba(255, 158, 0, 0.6);
+}
+
+body.onepiece-theme .user-card:hover {
+    box-shadow: 0 20px 60px rgba(255, 158, 0, 0.3);
+    border-color: #ff9e00;
+}
+
+/* ========================================
+   PROFILE PICTURE STYLES
+   ======================================== */
+.profile-pic-container {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.bio-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.straw-hat-decoration {
+    position: absolute;
+    top: -25px;
+    left: -25px;
+    width: 80px;
+    height: 80px;
+    animation: hatFloat 3s ease-in-out infinite;
+    z-index: 10;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes hatFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* ========================================
+   CUSTOM LINK ICONS
+   ======================================== */
+.link-custom-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.bio-link .link-icon {
+    display: none;
+}
+
+body:not(.onepiece-theme) .bio-orvanyx .link-icon {
+    display: none;
+}
