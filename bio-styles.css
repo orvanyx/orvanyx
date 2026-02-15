@@ -1264,3 +1264,211 @@ body.onepiece-theme .user-card:hover {
 body:not(.onepiece-theme) .bio-orvanyx .link-icon {
     display: none;
 }
+
+
+/* ========================================
+   NAVIGATION BUTTON
+   ======================================== */
+.nav-button {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), #0051ff);
+    border: 2px solid rgba(0, 212, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
+    z-index: 9996;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.nav-button:hover {
+    transform: scale(1.1) rotate(-10deg);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.5);
+}
+
+.nav-icon {
+    font-size: 1.75rem;
+}
+
+body.onepiece-theme .nav-button {
+    background: linear-gradient(135deg, #ff9e00, #d62828);
+    border-color: rgba(255, 158, 0, 0.5);
+    box-shadow: 0 8px 30px rgba(255, 158, 0, 0.3);
+}
+
+body.onepiece-theme .nav-button:hover {
+    box-shadow: 0 12px 40px rgba(255, 158, 0, 0.5);
+}
+
+/* ========================================
+   ENHANCED MOBILE RESPONSIVENESS
+   ======================================== */
+@media (max-width: 768px) {
+    .nav-button {
+        width: 50px;
+        height: 50px;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .nav-icon {
+        font-size: 1.5rem;
+    }
+    
+    .directory-title {
+        font-size: 2.5rem;
+        letter-spacing: 0.15em;
+    }
+    
+    .directory-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .user-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0.5rem;
+    }
+    
+    .user-card {
+        height: 280px;
+    }
+
+    .bio-name {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+    }
+    
+    .bio-description {
+        font-size: 0.9rem;
+    }
+
+    .user-bio-page {
+        padding: 1rem;
+    }
+    
+    .bio-container {
+        max-width: 100%;
+    }
+    
+    .bio-music {
+        padding: 1.25rem;
+    }
+    
+    .bio-link {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .music-deck-toggle {
+        width: 55px;
+        height: 55px;
+        font-size: 1.65rem;
+        bottom: 1.25rem;
+        right: 1.25rem;
+    }
+    
+    .theme-toggle {
+        width: 55px;
+        height: 55px;
+        font-size: 1.65rem;
+        bottom: 1.25rem;
+        left: 1.25rem;
+    }
+    
+    .music-deck-panel {
+        width: calc(100vw - 2.5rem);
+        right: 1.25rem;
+        bottom: 4.5rem;
+    }
+    
+    .music-deck-header {
+        padding: 1rem 1.25rem;
+    }
+    
+    .music-deck-panel .bio-music {
+        padding: 1rem;
+    }
+    
+    .music-visualizer {
+        height: 45px;
+    }
+    
+    .straw-hat-decoration {
+        width: 60px;
+        height: 60px;
+        top: -20px;
+        left: -20px;
+    }
+    
+    .password-container {
+        padding: 2rem 1.5rem;
+        width: 95%;
+    }
+    
+    .password-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .directory-title {
+        font-size: 2rem;
+    }
+    
+    .bio-name {
+        font-size: 1.75rem;
+    }
+    
+    .user-card {
+        height: 260px;
+    }
+    
+    .bio-link {
+        padding: 0.9rem 1.25rem;
+    }
+    
+    .link-custom-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* Performance optimization: reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .visualizer-bar {
+        animation: none !important;
+    }
+    
+    .straw-hat-decoration {
+        animation: none !important;
+    }
+}
+
+/* Optimize rendering performance */
+.bio-link,
+.user-card,
+.music-btn {
+    will-change: transform;
+}
+
+.bio-link:hover,
+.user-card:hover,
+.music-btn:hover {
+    will-change: auto;
+}
